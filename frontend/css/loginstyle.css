@@ -1,0 +1,66 @@
+body {
+  display: flex;
+  flex-direction: column; /* Układa elementy (zawartość i stopkę) jeden pod drugim */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Sprawia, że strona zajmuje pełną wysokość ekranu */
+  margin: 0;
+  background-color: #f4f6f9;
+}
+.login_zone {
+  border: 2px solid black;
+  width: 500px;
+  height: 300px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding-right: 75px;
+  padding-left: 75px;
+
+  h1 {
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  h2 {
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    label {
+      height: 20px;
+      width: 200px;
+      text-align: right;
+    }
+    input {
+      flex: 1;
+      padding: 5px;
+      border: 1px solid #f4f6f9;
+      border-radius: 4px;
+    }
+  }
+  button {
+    width: 100%;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+}
