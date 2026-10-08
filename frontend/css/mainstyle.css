@@ -1,0 +1,51 @@
+header {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 10px 20px;
+  margin: 0px;
+}
+
+.logo {
+  height: 75px;
+  width: 75px;
+}
+
+.options {
+  gap: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.options .option button {
+  background-color: violet;
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+.logout {
+  margin-left: auto;
+  button {
+    background-color: red;
+  }
+}
+
+article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  img {
+    max-width: 80%;
+    height: auto;
+    opacity: 0.5;
+    display: flex;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+}
