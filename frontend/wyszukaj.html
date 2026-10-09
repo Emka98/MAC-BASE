@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/nadajSeryjnie.css" />
+    <link rel="stylesheet" href="css/wyszukaj.css" />
+    <script src="script/wyszukaj.js" defer></script>
     <title>MAC DATABASE</title>
   </head>
   <body>
@@ -33,13 +34,14 @@
     </header>
     <article>
 
-        <div class="addAdres">
+        <h2>Filtruj po:</h2>
+      <div class="addAdres">
           <div class="addTypNyumberAmount">
             <h3>Typ urzadzenia:</h3>
             <input type="text" placeholder="Typ urządzenia np. GM-12">
             <h3>Numer urzadzenia:</h3>
             <input type="text" placeholder="Numer SN z tabliczki">
-            <h3>Ilosc adresow:</h3>
+            <h3>Mac adress</h3>
             <input type="text" placeholder="Tu wpisz ilość niezbędnych mac-adresów">
           </div>
           <div class="notediv">
@@ -47,22 +49,22 @@
             <input type="text" placeholder="Notatka" class="note">
           </div>
           <div class="addSerialnumber">
-            <h3>Numer poczatkowy:</h3>
+            <h3>Data nadania</h3>
             <input type="text" placeholder="Pierwszy numer z serji">
-            <h3>Ilosc urzadzen:</h3>
+            <h3>Ilosc adresow:</h3>
             <input type="text" placeholder="Ilość w serji">
-          <button>Przydziel</button>
+          <button>Filtruj</button>
           </div>
         </div>
-      <h2>Ostatnio nadane:</h2>
+
 
       <table>
         <tr>
-          <th>Lp.</th>
-          <th>urzadzenie</th>
-          <th>mac adres</th>
-          <th>Ilosc</th>
-          <th>data nadania</th>
+          <th><button>Lp.</button></th>
+          <th><button>Urzadzenie</button></th>
+          <th><button>mac adres</button></th>
+          <th><button>Ilosc</button></th>
+          <th><button>data nadania</button></th>
         </tr>
         <tbody id="macTable">
         </tbody>
