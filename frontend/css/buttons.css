@@ -1,0 +1,57 @@
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
+  color: #f9f9f9;
+  font-size: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+}
+
+button:active {
+  background: linear-gradient(180deg, #10b935, #0f9605);
+  border-color: #047857;
+}
+
+.logout button {
+  margin-top: 0px;
+  width: 100%;
+  padding: 12px 18px;
+
+  border: 2px solid #b91c1c;
+  border-radius: 8px;
+
+  background: linear-gradient(180deg, #ef4444, #b91c1c);
+  color: whitesmoke;
+
+  font-size: 16px;
+  font-weight: 600;
+  font-family: sans-serif;
+  text-align: center;
+
+  cursor: pointer;
+  user-select: none;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.logout button:hover {
+  background: linear-gradient(180deg, #dc2626, #991b1b);
+}
+
+.logout button:active {
+  background: linear-gradient(180deg, #450000, #c70021);
+  border-color: #047857;
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/wyszukaj.css" />
-    <script src="script/wyszukaj.js" defer></script>
+    <script src="script/strzalka_sortowania.js" defer></script>
     <title>MAC DATABASE</title>
   </head>
   <body>
@@ -15,17 +15,17 @@
         <div class="option">
           <span>Nadaj</span>
           <div class="dropdown-menu">
-            <a href="#">Nadaj seryjnie</a>
-            <a href="#">Nadaj jednostkowo</a>
+            <a href="nadajSeryjnie.html">Nadaj seryjnie</a>
+            <a href="nadajJednostkowo.html">Nadaj jednostkowo</a>
           </div>
         </div>
 
         <div class="option">
-          <span>Zwolnij</span>
+          <a href="zwolnij.html">Zwolnij</a>
         </div>
 
         <div class="option">
-          <a href="#">Wyszukaj</a>
+          <a href="wyszukaj.html">Wyszukaj</a>
         </div>
       </div>
       <div class="logout">
@@ -33,8 +33,6 @@
       </div>
     </header>
     <article>
-
-        <h2>Filtruj po:</h2>
       <div class="addAdres">
           <div class="addTypNyumberAmount">
             <h3>Typ urzadzenia:</h3>
@@ -59,12 +57,13 @@
 
 
       <table>
+      <h2>Ostatnie:</h2>
         <tr>
-          <th><button>Lp.</button></th>
-          <th><button>Urzadzenie</button></th>
-          <th><button>mac adres</button></th>
-          <th><button>Ilosc</button></th>
-          <th><button>data nadania</button></th>
+          <th>Lp.</th>
+          <th>urzadzenie</th>
+          <th>mac adres</th>
+          <th>Ilosc</th>
+          <th>data nadania</th>
         </tr>
         <tbody id="macTable">
         </tbody>
