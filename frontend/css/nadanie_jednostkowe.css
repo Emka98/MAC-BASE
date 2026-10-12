@@ -2,7 +2,7 @@
 
 .addAdres {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: stretch;
   justify-content: space-between;
   gap: 25px;
@@ -13,7 +13,7 @@
   padding: 25px;
 
   background-color: transparent;
-  border: 1px solid transparent;
+  border: 1px solid transparent;url(nadanie_jednostkowe.css)
   border-radius: 12px;
 
   box-sizing: border-box;
@@ -27,6 +27,7 @@
   display: flex;
   flex-direction: row;
   align-items: stretch;
+
   gap: 25px;
 
   width: 100%;
@@ -165,4 +166,8 @@
   background: linear-gradient(180deg, #10b935, #0f9605);
   border-color: #047857;
   color: #ffffff;
+}
+
+.background_logo {
+  margin-top: 50vh;
 }
