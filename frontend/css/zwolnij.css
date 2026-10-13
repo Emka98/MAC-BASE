@@ -1,52 +1,4 @@
-/* --- dropdown-menu --- */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: calc(100% + 6px);
-  left: 50%;
-  transform: translateX(-50%);
-
-  min-width: 190px;
-  background-color: #ffffff;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  box-shadow:
-    0 10px 25px -5px rgba(0, 0, 0, 0.12),
-    0 8px 10px -6px rgba(0, 0, 0, 0.08);
-  padding: 6px 0;
-  z-index: 1001;
-}
-
-.dropdown-menu::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 0;
-  right: 0;
-  height: 10px;
-}
-
-.option:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 10px 16px;
-  color: #374151;
-  font-size: 14px;
-  font-weight: 500;
-  text-align: left;
-  white-space: nowrap;
-  transition:
-    background-color 0.15s ease,
-    color 0.15s ease;
-}
-
-.dropdown-menu a:hover {
-  background-color: #f3f4f6;
-  color: #111827;
-}
+@import url("index.css");
 
 /* --- article --- */
 article {
@@ -57,6 +9,8 @@ article {
   justify-content: center;
   width: 100%;
 }
+
+/* Główny kontener */
 .addAdres {
   display: flex;
   flex-direction: row;
@@ -66,7 +20,7 @@ article {
 
   margin-top: 20px;
   width: 100%;
-  max-width: 650px;
+  max-width: 40%;
   padding: 25px;
 
   background-color: transparent;
@@ -80,72 +34,47 @@ article {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
-/* Main form */
-.addAdres {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-
-  width: 100%;
-  max-width: 75%;
-  margin-top: 20px;
-  padding: 25px;
-
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-  color: ##222;
-
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-}
-
-/* data device */
-.addTypNyumberAmount {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  flex: 1;
-  min-width: 0;
-}
-
-.addSerialnumber {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* note */
+/* Kolumny formularza */
+.addTypNyumberAmount,
+.addSerialnumber,
 .notediv {
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-width: 0;
+}
+
+.addTypNyumberAmount {
+  justify-content: space-between;
+}
+
+.addSerialnumber {
+  justify-content: space-between;
 }
 
 .notediv input {
   height: 100%;
 }
 
-/* h3 */
-.addAdres h3 {
+/* Nagłówki h3 (zjednoczone style) */
+.addAdres h3,
+.addSerialnumber h3 {
   margin-top: 0;
   margin-bottom: 7px;
-
   font-size: 14px;
   font-weight: 600;
   color: #111827;
 }
 
-/* gap */
-.addTypNyumberAmount h3:not(:first-child) {
+/* Odstępy dla kolejnych nagłówków */
+.addTypNyumberAmount h3:not(:first-child),
+.addSerialnumber h3:not(:first-child) {
   margin-top: 12px;
 }
 
-/* text */
-.addAdres input {
+/* Wspólne style dla pól tekstowych i textarea (.note) */
+.addAdres input,
+.addAdres .note {
   width: 100%;
   padding: 11px 12px;
 
@@ -158,66 +87,40 @@ article {
   box-sizing: border-box;
   outline: none;
   font-size: 14px;
+  font-family: Arial, sans-serif;
 
   transition:
     border-color 0.2s,
     box-shadow 0.2s;
 }
 
-/* input */
+/* Placeholder */
 .addAdres input::placeholder,
-.addAdres textarea::placeholder {
+.addAdres .note::placeholder {
   color: #9ca3af;
 }
 
-/* active file */
+/* Stan focus */
 .addAdres input:focus,
-.addAdres textarea:focus {
+.addAdres .note:focus {
   background-color: #ffffff;
   border-color: #9ca3af;
   box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.15);
 }
 
-/* h3 */
-.addSerialnumber h3:not(:first-child) {
-  margin-top: 12px;
-}
-
-.addSerialnumber h3 {
-  margin-top: 0;
-  margin-bottom: 7px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #111827;
-}
-
-/* note file */
+/* Specyficzne ustawienia dla pola note */
 .note {
-  width: 100%;
   height: 150px;
-  padding: 12px;
-
-  background-color: #f9fafb;
-  color: #333333;
-
-  border: 1px solid #d1d5db;
-  border-radius: 7px;
-
-  box-sizing: border-box;
   resize: vertical;
-  outline: none;
-
-  font-family: Arial, sans-serif;
-  font-size: 14px;
+  padding: 12px;
 }
 
-/* button */
+/* Przycisk */
 .addAdres button {
   width: 100%;
   margin-top: 15px;
   padding: 12px 18px;
 
-  /* Subtelny, nowoczesny gradient od ciemnej szarości do czerni */
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
   color: #f9f9f9;
 
@@ -233,83 +136,20 @@ article {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Najechanie na przycisk - rozjaśnienie i delikatny akcent */
+/* Najechanie na przycisk */
 .addAdres button:hover {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
   border-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Kliknięcie przycisku – elegancka, głęboka zieleń (zamiast neonu) */
+/* Kliknięcie przycisku */
 .addAdres button:active {
   background: linear-gradient(180deg, #10b935, #0f9605);
   border-color: #047857;
   color: #ffffff;
 }
 
-article img {
-  position: relative;
-  max-width: 80%;
-  height: auto;
-  opacity: 0.5;
-  display: flex;
-  z-index: 1;
-}
-
-/* --- table --- */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: sans-serif;
-}
-
-th {
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
-  padding: 12px;
-  border: 1px solid #ddd;
-  text-align: center;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-th:first-child {
-  width: 7%;
-}
-th:nth-child(4) {
-  width: 7%;
-}
-
-th {
-  padding: 0%;
-}
-
-th button {
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
-  border: none;
-  padding: 12px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: bold;
-}
-th button::after {
-  content: "▲";
-  display: inline-block;
-  margin-left: 5px;
-}
-
-th button.active::after {
-  content: " ▼";
-  display: inline-block;
-  margin-left: 5px;
-}
-
-/* --- footer --- */
-footer {
-  text-align: center;
-  padding: 15px;
+.background_logo {
+  margin-top: 50vh;
 }
