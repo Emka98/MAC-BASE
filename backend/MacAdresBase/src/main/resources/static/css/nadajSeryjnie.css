@@ -1,0 +1,110 @@
+@import url("index.css");
+
+/* Główny kontener */
+.addAdres {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 25px;
+
+  margin-top: 20px;
+  width: 100%;
+  max-width: 40%;
+  padding: 25px;
+
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  color: #222222;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* Kolumny formularza */
+.addTypNyumberAmount,
+.addSerialnumber,
+.notediv {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.addTypNyumberAmount,
+.addSerialnumber {
+  justify-content: space-between;
+}
+
+.notediv input {
+  height: 100%;
+}
+
+/* Nagłówki h3 (wspólne dla sekcji) */
+.addAdres h3,
+.addSerialnumber h3 {
+  margin-top: 0;
+  margin-bottom: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Odstępy dla kolejnych nagłówków */
+.addTypNyumberAmount h3:not(:first-child),
+.addSerialnumber h3:not(:first-child) {
+  margin-top: 12px;
+}
+.addSerialnumber button {
+  margin-top: 10%;
+}
+
+/* Wspólne style dla pól tekstowych i textarea (.note) */
+.addAdres input,
+.addAdres .note {
+  width: 100%;
+  padding: 11px 12px;
+
+  background-color: #f9fafb;
+  color: #333333;
+
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+
+  box-sizing: border-box;
+  outline: none;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+/* Placeholder */
+.addAdres input::placeholder,
+.addAdres .note::placeholder {
+  color: #9ca3af;
+}
+
+/* Stan focus */
+.addAdres input:focus,
+.addAdres .note:focus {
+  background-color: #ffffff;
+  border-color: #9ca3af;
+  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.15);
+}
+
+/* Specyficzne ustawienia dla pola note */
+.addAdres .note {
+  height: 150px;
+  resize: vertical;
+  padding: 12px;
+}
+
+.background_logo {
+  margin-top: 50vh;
+}

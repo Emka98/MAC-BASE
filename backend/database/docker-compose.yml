@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:14.24
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: magiic@password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
