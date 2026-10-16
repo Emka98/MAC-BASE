@@ -1,12 +1,14 @@
-package com.guli.macadresbase.Controler;
+package com.guli.macadresbase.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class loginControler {
-    @GetMapping
-    String getLogin(){
+public class LoginController {
+
+    @GetMapping("")
+    public String login(){
         return "login";
     }
+
 }

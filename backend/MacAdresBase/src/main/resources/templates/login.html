@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pl">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,7 +20,7 @@
         <form
           class="login-form"
           id="login-form"
-          action="login.php"
+          th:action="{@/login}"
           method="post"
         >
           <div class="input_zone">
