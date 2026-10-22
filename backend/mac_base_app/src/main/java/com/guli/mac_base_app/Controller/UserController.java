@@ -2,12 +2,11 @@ package com.guli.mac_base_app.Controller;
 
 import com.guli.mac_base_app.Model.User;
 import com.guli.mac_base_app.Repository.UserRepository;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
 
@@ -22,10 +21,9 @@ public class UserController {
         return userRepository.findAll();
     }
 
-    @PutMapping("/add")
-    public void addUser(@RequestBody User user){
+    @PostMapping("/add")
+    public String addUser(@RequestBody User user){
         userRepository.save(user);
-        return;
+        return "chuj";
     }
-
 }
