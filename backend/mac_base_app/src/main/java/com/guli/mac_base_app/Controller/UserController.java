@@ -2,6 +2,7 @@ package com.guli.mac_base_app.Controller;
 
 import com.guli.mac_base_app.Model.User;
 import com.guli.mac_base_app.Repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
+    @Autowired
     private UserRepository userRepository;
 
     public UserController(UserRepository userRepository) {

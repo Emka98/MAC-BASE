@@ -3,7 +3,7 @@ package com.guli.mac_base_app.Model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "/users")
 public class User {
 
     @Id

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:href="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/index.css}"/>
+    <title>MAC DATABASE</title>
+  </head>
+  <body>
+    <header>
+      <img src="../img/logo.svg" alt="logo" class="logo" />
+
+      <div class="options">
+        <div class="option">
+          <span>Nadaj</span>
+          <div class="dropdown-menu">
+            <a href="nadajSeryjnie.html">Nadaj seryjnie</a>
+            <a href="nadanie_jednostkowe.html">Nadaj jednostkowo</a>
+          </div>
+        </div>
+
+        <div class="option">
+          <a href="zwolnij.html">Zwolnij</a>
+        </div>
+
+        <div class="option">
+          <a href="wyszukaj.html">Wyszukaj</a>
+        </div>
+      </div>
+      <div class="logout">
+        <button class="logout_button">Wyloguj</button>
+      </div>
+    </header>
+
+    <article>
+        <img class="background_logo" src="../img/logo.svg" alt="background G-CODE logo" />
+      <table>
+      <h2>Ostatnio nadane:</h2>
+        <tr>
+          <th>Lp.</th>
+          <th>Urzadzenie</th>
+          <th>Mac adres</th>
+          <th>Ilosc</th>
+          <th>Data nadania</th>
+        </tr>
+        <tr>
+          <th>1</th>
+          <th>AC-30IP-02</th>
+          <th>
+            <ul>
+              <li>20:20:20:20:20:20</li>
+              <li>20:20:20:20:20:30</li>
+              <li>20:20:20:20:20:20</li>
+              <li>20:20:20:20:20:30</li>
+            </ul>
+          </th>
+          <th>5</th>
+          <th>data nadania</th>
+        </tr>
+        <tr>
+          <th>2</th>
+          <th>AC-30IP-01</th>
+          <th>
+            <ul>
+              <li>20:20:20:20:20:20</li>
+              <li>20:20:20:20:20:30</li>
+              <li>20:20:20:20:20:20</li>
+              <li>20:20:20:20:20:30</li>
+            </ul>
+          </th>
+          <th>4</th>
+          <th>data nadania</th>
+        </tr>
+        <tbody id="macTable">
+        </tbody>
+        </tr>
+      </table>
+      </div>
+    </article>
+    <footer>
+      <p>&copy; 2026 MAC DATABASE by Emil Guliński. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
