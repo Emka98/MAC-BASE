@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: mac_base_app
+    environment:
+      POSTGRES_DB: mac_base_app
+      POSTGRES_USER: mac_base_app
+      POSTGRES_PASSWORD: macBase@123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
