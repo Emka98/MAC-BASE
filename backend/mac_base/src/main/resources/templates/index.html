@@ -46,17 +46,14 @@
         </thead>
         <tbody>
           <tr th:each="device : ${deviceList}">
-            <td th:text="${device.serialnumber}">Serial Number</td>
-            <td th:text="${device.name}">Device Name</td>
+            <td th:text="${device.serialnumber}"></td>
+            <td th:text="${device.name}"></td>
             <td>
               <ul>
-                <li>20:20:20:20:20:20</li>
-                <li>20:20:20:20:20:30</li>
-                <li>20:20:20:20:20:20</li>
-                <li>20:20:20:20:20:30</li>
+                <li th:each="macadres : ${device.getListAllMacaddress()}" th:text="${macadres}"></li>
               </ul>
             </td>
-            <td>data nadania</td>
+            <td th:text="${#temporals.format(device.created, 'yyyy-MM-dd HH:mm')}">
           </tr>
         </tbody>
       </table>
