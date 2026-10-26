@@ -1,13 +1,9 @@
 package com.devtiro.mac_base.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "devices")
@@ -16,9 +12,9 @@ public class Device {
     @Id
     private Integer serialnumber;
     private String name;
-    private int amountMacaddress;
-    private long firstMacaddress;
-    private Range idOwner;
+    private int amount;
+    @OneToMany(mappedBy = "device", cascade = CascadeType.ALL)
+    private Set<MacAddress> macAddresses;
     private LocalDateTime  created;
     private LocalDateTime lastModified = null;
     private LocalDateTime deleted = null;
@@ -26,12 +22,13 @@ public class Device {
     public Device() {
     }
 
-    public Device(Integer serialnumber, String name, int amountMacaddress, long firstMacaddress) {
+    public Device(Integer serialnumber, String name, Set<MacAddress> macAddresses, Range idOwner, LocalDateTime created, LocalDateTime lastModified, LocalDateTime deleted) {
         this.serialnumber = serialnumber;
         this.name = name;
-        this.amountMacaddress = amountMacaddress;
-        this.firstMacaddress = firstMacaddress;
-        this.created = LocalDateTime.now();
+        this.macAddresses = macAddresses;
+        this.created = created;
+        this.lastModified = lastModified;
+        this.deleted = deleted;
     }
 
     public Integer getSerialnumber() {
@@ -50,32 +47,15 @@ public class Device {
         this.name = name;
     }
 
-    public int getAmountMacaddress() {
-        return amountMacaddress;
+    public Set<MacAddress> getMacAddresses() {
+        return macAddresses;
     }
 
-    public void setAmountMacaddress(int amountMacaddress) {
-        this.amountMacaddress = amountMacaddress;
-    }
-
-    public long getFirstMacaddress() {
-        return firstMacaddress;
-    }
-
-    public void setFirstMacaddress(long firstMacaddress) {
-        this.firstMacaddress = firstMacaddress;
-    }
-
-    public Range getIdOwner() {
-        return idOwner;
-    }
-
-    public void setIdOwner(Range idOwner) {
-        this.idOwner = idOwner;
+    public void setMacAddresses(Set<MacAddress> macAddresses) {
+        this.macAddresses = macAddresses;
     }
 
     public LocalDateTime getCreated() {
-
         return created;
     }
 
@@ -99,23 +79,11 @@ public class Device {
         this.deleted = deleted;
     }
 
-    public List<String> getListAllMacaddress() {
-        List<String> listAllmacaddress = new ArrayList<>();
-
-        Range baseMacAddress = this.getIdOwner();
-        long amount = this.getAmountMacaddress();
-
-        for (long i = 0; i < amount; i++) {
-            long currentMacaddress = baseMacAddress.getIdOwner() + this.firstMacaddress + i;
-            String currentMac = String.format("%012X", currentMacaddress);
-            currentMac = currentMac.replaceAll("(.{2})(?=.)", "$1:");
-            listAllmacaddress.add(currentMac);
-        }
-        return listAllmacaddress;
-    }
-
     @Override
     public String toString() {
-        return "Device [serialnumber=" + serialnumber + ", name=" + name + ", amountMacaddress=";
+        return "Device serialnumber=" +
+                serialnumber +
+                ", name=" +
+                name;
     }
 }

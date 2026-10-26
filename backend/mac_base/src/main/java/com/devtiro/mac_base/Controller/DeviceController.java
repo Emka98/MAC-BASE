@@ -2,6 +2,7 @@ package com.devtiro.mac_base.Controller;
 
 import com.devtiro.mac_base.Model.Device;
 import com.devtiro.mac_base.Repository.DeviceRepository;
+import com.devtiro.mac_base.Services.DevicesServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,21 +12,22 @@ import java.util.List;
 @RequestMapping("/device")
 public class DeviceController {
 
-    private final DeviceRepository deviceRepository;
+    private final DevicesServices devicesServices;
 
     @Autowired
-    public DeviceController(DeviceRepository deviceRepository) {
-        this.deviceRepository = deviceRepository;
+    public DeviceController(DevicesServices devicesServices) {
+
+        this.devicesServices = devicesServices;
     }
 
     @PostMapping("/add")
     public String add(@RequestBody Device device) {
-        this.deviceRepository.save(device);
+        this.devicesServices;
         return "added " + device.toString();
     }
 
-    @GetMapping("/showAllDevice")
-    public List<Device> showAllDevice(){
-        return deviceRepository.findAll();
-    }
+//    @GetMapping("/showAllDevice")
+//    public List<Device> showAllDevice(){
+//        return deviceRepository.findAll();
+//    }
 }

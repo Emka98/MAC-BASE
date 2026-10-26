@@ -1,8 +1,7 @@
 package com.devtiro.mac_base.Model;
 
 public enum Range {
-    RANGE_CC9F03(224983322198016L,"G-Code"),
-    RANGE_CC9F04(224983338975232L,"G-Dron");
+    RANGE_CC9F03(224983322198016L,"G-Code");
 
     private final long idOwner;
     private final String nameOwner;
