@@ -3,6 +3,7 @@ package com.devtiro.mac_base.Model;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -10,33 +11,29 @@ import java.util.Set;
 public class Device {
 
     @Id
-    private Integer serialnumber;
+    private Integer serialNumber;
     private String name;
+
+    @Enumerated
+    private RangeMac rangeMac;
     private int amount;
-    @OneToMany(mappedBy = "device", cascade = CascadeType.ALL)
-    private Set<MacAddress> macAddresses;
+
+    @OneToMany(mappedBy = "device", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<MacAddres> macAddresses = new HashSet<MacAddres>();
+
     private LocalDateTime  created;
-    private LocalDateTime lastModified = null;
-    private LocalDateTime deleted = null;
+    private LocalDateTime lastModified;
+    private LocalDateTime deleted;
 
     public Device() {
     }
 
-    public Device(Integer serialnumber, String name, Set<MacAddress> macAddresses, Range idOwner, LocalDateTime created, LocalDateTime lastModified, LocalDateTime deleted) {
-        this.serialnumber = serialnumber;
-        this.name = name;
-        this.macAddresses = macAddresses;
-        this.created = created;
-        this.lastModified = lastModified;
-        this.deleted = deleted;
-    }
-
     public Integer getSerialnumber() {
-        return serialnumber;
+        return serialNumber;
     }
 
     public void setSerialnumber(Integer serialnumber) {
-        this.serialnumber = serialnumber;
+        this.serialNumber = serialnumber;
     }
 
     public String getName() {
@@ -47,11 +44,27 @@ public class Device {
         this.name = name;
     }
 
-    public Set<MacAddress> getMacAddresses() {
+    public RangeMac getRangeMac() {
+        return rangeMac;
+    }
+
+    public void setRangeMac(RangeMac rangeMac) {
+        this.rangeMac = rangeMac;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public Set<MacAddres> getMacAddresses() {
         return macAddresses;
     }
 
-    public void setMacAddresses(Set<MacAddress> macAddresses) {
+    public void setMacAddresses(Set<MacAddres> macAddresses) {
         this.macAddresses = macAddresses;
     }
 
@@ -79,10 +92,14 @@ public class Device {
         this.deleted = deleted;
     }
 
+    public void addMacAddress(MacAddres macAddres){
+        this.macAddresses.add(macAddres);
+    }
+
     @Override
     public String toString() {
         return "Device serialnumber=" +
-                serialnumber +
+                serialNumber +
                 ", name=" +
                 name;
     }

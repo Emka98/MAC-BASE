@@ -11,17 +11,4 @@ import java.util.List;
 @Controller
 public class IndexController {
 
-    @Autowired
-    DeviceRepository deviceRepository;
-
-    public IndexController(DeviceRepository deviceRepository) {
-        this.deviceRepository = deviceRepository;
-    }
-
-    @GetMapping("")
-    public String showindex(Model model){
-        List<Device> deviceList = this.deviceRepository.findAll();
-        model.addAttribute("deviceList",deviceList);
-        return "index";
-    }
 }

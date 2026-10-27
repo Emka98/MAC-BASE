@@ -1,12 +1,12 @@
 package com.devtiro.mac_base.Model;
 
-public enum Range {
+public enum RangeMac {
     RANGE_CC9F03(224983322198016L,"G-Code");
 
     private final long idOwner;
     private final String nameOwner;
 
-    Range(long idOwner, String nameOwner) {
+    RangeMac(long idOwner, String nameOwner) {
         this.idOwner = idOwner;
         this.nameOwner = nameOwner;
     }

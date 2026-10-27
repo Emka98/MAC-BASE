@@ -1,47 +1,22 @@
 package com.devtiro.mac_base.Model;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "macaddress")
-public class MacAddress {
+public class MacAddres {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
-    private LocalDateTime created;
-    private LocalDateTime lastModified = null;
-    private boolean returned = false;
-    private Long macaddres;
-    private Range idOwner;
+    @Column(name = "macadress", nullable = false, unique = true)
+    private long macAddres;
+
     @ManyToOne
-    @JoinColumn(name = "devices_id")
+    @JoinColumn(name = "device", referencedColumnName = "serialNumber")
     private Device device;
 
-    public MacAddress() {
-    }
+    private boolean returmed = false;
 
-    public MacAddress(Long macaddres, Range idOwner, Device device) {
-        this.macaddres = macaddres;
-        this.idOwner = idOwner;
-        this.device = device;
-    }
-
-    public Long getMacaddres() {
-        return macaddres;
-    }
-
-    public void setMacaddres(Long macaddres) {
-        this.macaddres = macaddres;
-    }
-
-    public Range getIdOwner() {
-        return idOwner;
-    }
-
-    public void setIdOwner(Range idOwner) {
-        this.idOwner = idOwner;
+    public MacAddres() {
     }
 
     public Device getDevice() {
@@ -52,11 +27,19 @@ public class MacAddress {
         this.device = device;
     }
 
-    @Override
-    public String toString() {
-        long macAddres = this.idOwner.getIdOwner() + this.macaddres;
-        String currentMac = String.format("%012X", macAddres);
-        currentMac = currentMac.replaceAll("(.{2})(?=.)", "$1:");
-        return currentMac;
+    public long getMacAddress() {
+        return macAddres;
+    }
+
+    public void setMacAddress(long macAddress) {
+        this.macAddres = macAddress;
+    }
+
+    public boolean isReturmed() {
+        return returmed;
+    }
+
+    public void setReturmed(boolean returmed) {
+        this.returmed = returmed;
     }
 }

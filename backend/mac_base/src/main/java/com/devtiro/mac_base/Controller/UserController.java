@@ -10,23 +10,4 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired
-    private UserRepository userRepository;
-
-
-    public UserController(UserRepository userRepository) {
-
-        this.userRepository = userRepository;
-    }
-
-    @PostMapping("/add")
-    public String add(@RequestBody User user){
-        userRepository.save(user);
-        return "added" + user.toString();
-    }
-
-    @GetMapping("/showAllUsers")
-    public List<User> showAllUsers(){
-        return userRepository.findAll();
-    }
 }
