@@ -1,6 +1,6 @@
 spring:
   application:
-    name: mac_base
+    name: MAC_BASE
   profiles:
-    active: dev
-
+    active:
+      - dev

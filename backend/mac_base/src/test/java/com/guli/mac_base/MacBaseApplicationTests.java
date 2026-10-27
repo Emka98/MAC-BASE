@@ -1,4 +1,4 @@
-package com.devtiro.mac_base;
+package com.guli.mac_base;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

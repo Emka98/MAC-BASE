@@ -1,10 +1,10 @@
-package com.devtiro.mac_base.Model;
+package com.guli.mac_base.Model;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,12 +13,6 @@ public class User {
     private String password;
 
     public User() {
-    }
-
-    public User(Integer id, String name, String password) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
     }
 
     public Integer getId() {
@@ -43,10 +37,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    @Override
-    public String toString() {
-        return "User{"+this.name+"}";
     }
 }
