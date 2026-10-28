@@ -1,6 +1,7 @@
+debug: true
 spring:
   datasource:
-    url: jdbc:h2:~/test
+    url: jdbc:h2:~/test;DATABASE_TO_UPPER=false
     driver-class-name: org.h2.Driver
     username: sa
     password:
@@ -8,5 +9,6 @@ spring:
     console:
       enabled: true
   jpa:
+    show-sql: true
     hibernate:
       ddl-auto: update
