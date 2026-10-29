@@ -26,4 +26,6 @@ public class UserServices {
     public List<User> findAllUser(){
         return this.userRepository.findAll();
     }
+
+    public void editUser(){}
 }

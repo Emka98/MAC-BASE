@@ -4,6 +4,8 @@ import com.guli.mac_base.Model.User;
 import com.guli.mac_base.Service.UserServices;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -17,15 +19,22 @@ public class UserController {
 
     @PostMapping("/addUser")
     public void addUser(@RequestBody User user) {
+
         userServices.addUser(user);
     }
 
     @PostMapping("/deleteUser")
-    public void deleteUser(Integer userId){
+    public void deleteUser(User user) {
+        userServices.deleteUser(user);
     }
 
     @PostMapping("/findUser")
-    public void findUser(){
+    public List<User> findUser(){
+        return userServices.findAllUser();
+    }
+
+    @PostMapping("/editUser")
+    public void editUser(){
     }
 
 }

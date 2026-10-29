@@ -1,0 +1,27 @@
+#Uzytkownik
+[ ] Dodawanie użytkowników
+[ ] Uswanie Uzytkowników
+[ ] Edycia danych hasło imię
+
+# Urządzenie
+[ ] Dodanie urzadznie
+[ ] Usunięcie urzadznia
+[ ] Przypisanie organizacji
+[ ] Edycjia nazwy urzadzenia
+[ ] Edycjia przypisania organizacji
+
+# MacAdress
+[ ] Daodanie ich do listy urzadzenie według logiki
+- [ ] Najpierw zowolnione i maja być po sobie z iteracja co 1
+- [ ] Jesli pierwszy punkt nie nadał mac adresu generuje lub przypisuje nowe pokoleji
+
+
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
+[ ]
