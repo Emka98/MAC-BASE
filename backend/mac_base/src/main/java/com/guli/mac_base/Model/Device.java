@@ -12,8 +12,10 @@ public class Device {
 
     @Column(unique = true)
     private int serialNumber;
+    @OneToOne
     private TypeDevice typ;
-    private Set<MacAdress> macAdressSet;
+    @OneToMany
+    private Set<MacAdres> macAdressSet;
 
     public Device() {
     }
@@ -42,11 +44,11 @@ public class Device {
         this.typ = typ;
     }
 
-    public Set<MacAdress> getMacAdressSet() {
+    public Set<MacAdres> getMacAdressSet() {
         return macAdressSet;
     }
 
-    public void setMacAdressSet(Set<MacAdress> macAdressSet) {
+    public void setMacAdressSet(Set<MacAdres> macAdressSet) {
         this.macAdressSet = macAdressSet;
     }
 }

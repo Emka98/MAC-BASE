@@ -1,8 +1,7 @@
 package com.guli.mac_base.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
@@ -14,6 +13,8 @@ public class TypeDevice {
 
     private String name;
     private String desinerName;
+
+    @OneToOne
     private Company company;
 
     public TypeDevice() {
