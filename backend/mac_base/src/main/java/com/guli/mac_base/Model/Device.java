@@ -15,7 +15,7 @@ public class Device {
     @OneToOne
     private TypeDevice typ;
     @OneToMany
-    private Set<MacAdres> macAdressSet;
+    private Set<MacAdress> macAdressSet;
 
     public Device() {
     }
@@ -44,11 +44,11 @@ public class Device {
         this.typ = typ;
     }
 
-    public Set<MacAdres> getMacAdressSet() {
+    public Set<MacAdress> getMacAdressSet() {
         return macAdressSet;
     }
 
-    public void setMacAdressSet(Set<MacAdres> macAdressSet) {
+    public void setMacAdressSet(Set<MacAdress> macAdressSet) {
         this.macAdressSet = macAdressSet;
     }
 }

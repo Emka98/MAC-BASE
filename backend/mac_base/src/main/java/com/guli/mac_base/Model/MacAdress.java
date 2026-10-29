@@ -3,12 +3,12 @@ package com.guli.mac_base.Model;
 import jakarta.persistence.*;
 
 @Entity
-public class MacAdres {
+public class MacAdress {
 
     @Id
     private long macAddress;
 
-    public MacAdres() {
+    public MacAdress() {
     }
 
     public long getMacAddress() {

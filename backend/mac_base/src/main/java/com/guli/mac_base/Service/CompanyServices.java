@@ -7,17 +7,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class CompanyServices {
 
-    private CompanyRepository companyRepository = new CompanyRepository();
+    private final CompanyRepository companyRepository;
 
     public CompanyServices(CompanyRepository companyRepository) {
+
         this.companyRepository = companyRepository;
     }
 
     public void addCompany(String name, long macBlock){
-        Company company = new Company();
-        company.setNameCompany(name);
-        company.addBlockToSet(macBlock);
-        this.companyRepository.save(company);
+
     }
 
 }
