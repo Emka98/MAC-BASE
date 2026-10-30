@@ -1,7 +1,12 @@
 #Uzytkownik
-[ ] Dodawanie użytkowników
-[ ] Uswanie Uzytkowników
-[ ] Edycia danych hasło imię
+[X] Dodawanie użytkowników
+[X] Uswanie Uzytkowników
+[X] Edycia danych hasło imię
+
+# Firma
+[ ] Doadanie
+[ ] Usunicie
+[ ] Edycia
 
 # Urządzenie
 [ ] Dodanie urzadznie
@@ -15,13 +20,3 @@
 - [ ] Najpierw zowolnione i maja być po sobie z iteracja co 1
 - [ ] Jesli pierwszy punkt nie nadał mac adresu generuje lub przypisuje nowe pokoleji
 
-
-[ ]
-[ ]
-[ ]
-[ ]
-[ ]
-[ ]
-[ ]
-[ ]
-[ ]

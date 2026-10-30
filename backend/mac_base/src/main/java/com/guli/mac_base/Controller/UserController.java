@@ -19,22 +19,22 @@ public class UserController {
 
     @PostMapping("/addUser")
     public void addUser(@RequestBody User user) {
-
         userServices.addUser(user);
     }
 
     @PostMapping("/deleteUser")
-    public void deleteUser(User user) {
+    public void deleteUser(@RequestBody User user) {
         userServices.deleteUser(user);
     }
 
-    @PostMapping("/findUser")
-    public List<User> findUser(){
-        return userServices.findAllUser();
+    @PostMapping("/editUser")
+    public void editUser(@RequestParam (required = false) String name, @RequestParam (required = false) String password, @RequestBody User user){
+        userServices.editUser(name, password, user);
     }
 
-    @PostMapping("/editUser")
-    public void editUser(){
+    @GetMapping("/findUser")
+    public List<User> findUser(){
+        return userServices.findAllUser();
     }
 
 }
