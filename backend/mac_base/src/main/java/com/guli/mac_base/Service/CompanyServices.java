@@ -7,15 +7,4 @@ import org.springframework.stereotype.Service;
 @Service
 public class CompanyServices {
 
-    private final CompanyRepository companyRepository;
-
-    public CompanyServices(CompanyRepository companyRepository) {
-
-        this.companyRepository = companyRepository;
-    }
-
-    public void addCompany(String name, long macBlock){
-
-    }
-
 }

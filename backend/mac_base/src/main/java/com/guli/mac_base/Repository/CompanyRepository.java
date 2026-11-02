@@ -1,8 +1,14 @@
 package com.guli.mac_base.Repository;
 
-import com.guli.mac_base.Model.Company;
-import org.springframework.data.jpa.repository.JpaRepository;
+import jakarta.persistence.EntityManager;
+import org.springframework.stereotype.Repository;
 
-public interface CompanyRepository extends JpaRepository<Company, Integer> {
+@Repository
+public class CompanyRepository {
 
+    private final EntityManager entityManager;
+
+    public CompanyRepository(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
 }

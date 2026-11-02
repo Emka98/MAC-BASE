@@ -1,8 +1,13 @@
 package com.guli.mac_base.Repository;
 
-import com.guli.mac_base.Model.MacAdress;
-import org.springframework.data.jpa.repository.JpaRepository;
+import jakarta.persistence.EntityManager;
+import org.springframework.stereotype.Repository;
 
-public interface MacAdressRepository extends JpaRepository<MacAdress, Long> {
+@Repository
+public class MacAdressRepository {
+    private final EntityManager entityManager;
 
+    public MacAdressRepository(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
 }

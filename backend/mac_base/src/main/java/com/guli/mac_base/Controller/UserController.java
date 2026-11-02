@@ -1,5 +1,6 @@
 package com.guli.mac_base.Controller;
 
+import com.guli.mac_base.Dto.UserDto;
 import com.guli.mac_base.Model.User;
 import com.guli.mac_base.Service.UserServices;
 import org.springframework.web.bind.annotation.*;
@@ -18,22 +19,25 @@ public class UserController {
     }
 
     @PostMapping("/addUser")
-    public void addUser(@RequestBody User user) {
-        userServices.addUser(user);
+    public void addUser(@RequestBody UserDto userDto) {
+
+        userServices.addUser(userDto);
     }
 
     @PostMapping("/deleteUser")
     public void deleteUser(@RequestBody User user) {
+
         userServices.deleteUser(user);
     }
 
     @PostMapping("/editUser")
-    public void editUser(@RequestParam (required = false) String name, @RequestParam (required = false) String password, @RequestBody User user){
-        userServices.editUser(name, password, user);
+    public void editUser(@RequestParam (required = false) String name, @RequestParam (required = false) String password, @RequestBody UserDto userdto){
+        userServices.editUser(name, password, userdto);
     }
 
     @GetMapping("/findUser")
     public List<User> findUser(){
+
         return userServices.findAllUser();
     }
 
