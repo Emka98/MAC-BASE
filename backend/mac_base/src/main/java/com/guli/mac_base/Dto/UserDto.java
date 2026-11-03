@@ -2,22 +2,12 @@ package com.guli.mac_base.Dto;
 
 public class UserDto {
 
-    private Integer id;
     private String name;
     private String password;
 
-    public UserDto(Integer id, String name, String password) {
-        this.id = id;
+    public UserDto(String name, String password) {
         this.name = name;
         this.password = password;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -39,9 +29,8 @@ public class UserDto {
     @Override
     public String toString() {
         return "UserDto{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
+                ", name='" + name +
+                ", password='" + password +
                 '}';
     }
 }

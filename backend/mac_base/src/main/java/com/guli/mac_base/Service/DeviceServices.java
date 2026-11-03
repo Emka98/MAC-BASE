@@ -1,4 +1,4 @@
-package com.guli.mac_base.Service;
-
-public class DeviceServices {
-}
+//package com.guli.mac_base.Service;
+//
+//public class DeviceServices {
+//}

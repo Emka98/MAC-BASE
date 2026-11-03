@@ -24,21 +24,27 @@ public class UserController {
         userServices.addUser(userDto);
     }
 
+    @GetMapping("/findUser")
+    public List<User> findUser(){
+
+        return userServices.findAllUsers();
+    }
+
     @PostMapping("/deleteUser")
     public void deleteUser(@RequestBody User user) {
 
         userServices.deleteUser(user);
     }
-
-    @PostMapping("/editUser")
-    public void editUser(@RequestParam (required = false) String name, @RequestParam (required = false) String password, @RequestBody UserDto userdto){
-        userServices.editUser(name, password, userdto);
-    }
-
-    @GetMapping("/findUser")
-    public List<User> findUser(){
-
-        return userServices.findAllUser();
-    }
+//
+//    @PostMapping("/editUser")
+//    public void editUser(@RequestParam (required = false) String name, @RequestParam (required = false) String password, @RequestBody UserDto userdto){
+//        userServices.editUser(name, password, userdto);
+//    }
+//
+//    @GetMapping("/findUser")
+//    public List<User> findUser(){
+//
+//        return userServices.findAllUser();
+//    }
 
 }
