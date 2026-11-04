@@ -4,9 +4,8 @@ import com.guli.mac_base.Dto.UserDto;
 import com.guli.mac_base.Model.User;
 import com.guli.mac_base.Repository.UserRepository;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServices {
@@ -14,21 +13,35 @@ public class UserServices {
     private final UserRepository userRepository;
 
     public UserServices(UserRepository userRepository) {
+
         this.userRepository = userRepository;
     }
 
-    public void addUser(UserDto user){
-        if(user.getPassword() != null & user.getName() != null) {
-            userRepository.save(new User(user.getName(), user.getPassword()));
-        }
+    public void addUser(UserDto userDto){
+        User user = new User();
+        user.setName(userDto.getName());
+        user.setPassword(userDto.getPassword());
+        user.setRole(userDto.getRole());
+        userRepository.save(user);
     }
-
+    
     public List<User> findAllUsers(){
         return userRepository.findAll();
     }
 
-    public void deleteUser(UserDto user){
-        userRepository.findByName(user.getName());
-        userRepository.delete(user);
+    public void deleteUser(String name) {
+        userRepository.findByName(name).ifPresent(userRepository::delete);
+    }
+
+    public void editUser(String name, String password, UserDto userdto) {
+        userRepository.findByName(userdto.getName()).ifPresent(user -> {
+            user.setName(name);
+            user.setPassword(password);
+            userRepository.save(user);
+        });
+    }
+
+    public Optional<User> findUserByName(String name) {
+        return userRepository.findByName(name);
     }
 }

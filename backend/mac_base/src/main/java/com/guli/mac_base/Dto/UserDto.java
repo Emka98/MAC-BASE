@@ -1,13 +1,14 @@
 package com.guli.mac_base.Dto;
 
+import com.guli.mac_base.Model.Role;
+
 public class UserDto {
 
     private String name;
     private String password;
+    private Role role;
 
-    public UserDto(String name, String password) {
-        this.name = name;
-        this.password = password;
+    public UserDto() {
     }
 
     public String getName() {
@@ -26,11 +27,11 @@ public class UserDto {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "UserDto{" +
-                ", name='" + name +
-                ", password='" + password +
-                '}';
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
