@@ -4,9 +4,7 @@ import com.guli.mac_base.Dto.UserDto;
 import com.guli.mac_base.Model.User;
 import com.guli.mac_base.Service.UserServices;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
