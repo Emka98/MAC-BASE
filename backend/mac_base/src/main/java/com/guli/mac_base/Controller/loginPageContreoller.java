@@ -18,11 +18,13 @@ public class loginPageContreoller {
 
     @GetMapping()
     public String loginPage(){
+
         return "login";
     }
 
     @PostMapping("/loginIn")
-    public void loginIn(@RequestParam String username,@RequestParam String password){
+    public String loginIn(@RequestParam String username,@RequestParam String password){
     loginService.loginIn(username,password);
+        return "login";
     }
 }

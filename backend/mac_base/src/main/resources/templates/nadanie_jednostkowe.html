@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/nadanie_jednostkowe.css" />
+  <title>MAC DATABASE</title>
+</head>
+<body>
+<header>
+  <img src="img/logo.svg" alt="logo" class="logo" />
+
+  <div class="options">
+    <div class="option">
+      <span>Nadaj</span>
+      <div class="dropdown-menu">
+        <a href="nadaj_seryjnie.html">Nadaj seryjnie</a>
+        <a href="nadanie_jednostkowe.html">Nadaj jednostkowo</a>
+      </div>
+    </div>
+
+    <div class="option">
+      <a href="zwolnij.html">Zwolnij</a>
+    </div>
+
+    <div class="option">
+      <a href="wyszukaj.html">Wyszukaj</a>
+    </div>
+  </div>
+  <div class="logout">
+    <button type="button">Wyloguj</button>
+  </div>
+</header>
+
+<article>
+  <form action="/device/addDevice" method="POST" class="addAdres">
+    <div class="addTypNyumberAmount">
+      <h3>Typ urządzenia:</h3>
+      <input type="text" name="deviceType" placeholder="Tu wpisz typ urządzenia">
+
+      <h3>Numer urządzenia:</h3>
+      <input type="text" name="deviceNumber" placeholder="Tu wpisz numer urządzenia">
+
+      <h3>Ilość adresów:</h3>
+      <input type="number" name="addressCount" placeholder="Tu wpisz ilość adresów">
+    </div>
+    <div class="notediv">
+      <h3>Notatka:</h3>
+      <input type="text" name="note" placeholder="Tu wpisz notatkę" class="note">
+      <button type="submit">Przydziel</button>
+    </div>
+  </form>
+
+  <h2>Ostatnio nadane:</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Lp.</th>
+      <th>Urządzenie</th>
+      <th>Mac adres</th>
+      <th>Ilość</th>
+      <th>Data nadania</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>1</td>
+      <td>GM-13</td>
+      <td>
+        <ul>
+          <li>20:20:20:20:20:20</li>
+          <li>20:20:20:20:20:30</li>
+        </ul>
+      </td>
+      <td>5</td>
+      <td>09.06.2012</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>GM-19</td>
+      <td>
+        <ul>
+          <li>20:20:20:20:20:20</li>
+          <li>20:20:20:20:20:30</li>
+        </ul>
+      </td>
+      <td>4</td>
+      <td>09.06.2012</td>
+    </tr>
+    <!-- Tutaj dynamicznie dodawane wiersze z Thymeleaf lub JS -->
+    </tbody>
+    <tbody id="macTable">
+    </tbody>
+  </table>
+
+  <img class="background_logo" src="img/logo.svg" alt="background G-CODE logo" />
+</article>
+
+<footer>
+  <p>&copy; 2026 MAC DATABASE by Emil Guliński. All rights reserved.</p>
+</footer>
+</body>
+</html>
