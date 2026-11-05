@@ -4,6 +4,4 @@ import com.guli.mac_base.Model.TypeDevice;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 interface TypeDeviceRepository extends JpaRepository<TypeDevice, Integer> {
-
-
 }

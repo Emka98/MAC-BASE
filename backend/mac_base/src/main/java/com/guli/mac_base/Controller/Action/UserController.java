@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/Users")
 public class UserController {
 
     private final UserServices userServices;
@@ -17,25 +17,25 @@ public class UserController {
         this.userServices = userServices;
     }
 
-    @PostMapping("/addUser")
+    @PostMapping("/AddUser")
     public void addUser(@RequestBody UserDto user) {
 
         userServices.addUser(user);
     }
 
-    @GetMapping("/findUser")
+    @GetMapping("/FindUser")
     public List<User> findUser(){
 
         return userServices.findAllUsers();
     }
 
-    @PostMapping("/deleteUser")
+    @PostMapping("/DeleteUser")
     public void deleteUser(@RequestParam String name) {
 
         userServices.deleteUser(name);
     }
 
-    @PostMapping("/editUser")
+    @PostMapping("/EditUser")
     public void editUser(@RequestParam (required = false) String name,
                          @RequestParam (required = false) String password,
                          @RequestBody UserDto userdto){
