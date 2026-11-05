@@ -1,6 +1,5 @@
-package com.guli.mac_base.Controller;
+package com.guli.mac_base.Controller.Action;
 
-import com.guli.mac_base.Service.CompanyServices;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/Company")

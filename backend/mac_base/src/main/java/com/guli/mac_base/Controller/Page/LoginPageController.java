@@ -1,4 +1,4 @@
-package com.guli.mac_base.Controller;
+package com.guli.mac_base.Controller.Page;
 
 import com.guli.mac_base.Service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,24 +7,24 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/login")
-public class LoginPageContreoller {
+public class LoginPageController {
 
     @Autowired
     private LoginService loginService;
 
-    public LoginPageContreoller(LoginService loginService) {
+    public LoginPageController(LoginService loginService) {
         this.loginService = loginService;
     }
 
     @GetMapping()
     public String loginPage(){
 
-        return "login";
+        return "Login";
     }
 
     @PostMapping("/loginIn")
     public String loginIn(@RequestParam String username,@RequestParam String password){
     loginService.loginIn(username,password);
-        return "login";
+        return "Login";
     }
 }

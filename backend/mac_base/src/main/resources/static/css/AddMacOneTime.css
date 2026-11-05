@@ -1,4 +1,4 @@
-@import url("index.css");
+@import url("static/css/Main.css");
 
 /* Główny kontener */
 .addAdres {
@@ -10,7 +10,7 @@
 
   margin-top: 20px;
   width: 100%;
-  max-width: 40%;
+  max-width: 650px;
   padding: 25px;
 
   background-color: #ffffff;
@@ -26,7 +26,6 @@
 
 /* Kolumny formularza */
 .addTypNyumberAmount,
-.addSerialnumber,
 .notediv {
   display: flex;
   flex-direction: column;
@@ -34,32 +33,22 @@
   min-width: 0;
 }
 
-.addTypNyumberAmount,
-.addSerialnumber {
+.addTypNyumberAmount {
   justify-content: space-between;
 }
 
-.notediv input {
-  height: 100%;
-}
-
-/* Nagłówki h3 (wspólne dla sekcji) */
-.addAdres h3,
-.addSerialnumber h3 {
+/* Nagłówki h3 */
+.addAdres h3 {
   margin-top: 0;
   margin-bottom: 7px;
+
   font-size: 14px;
   font-weight: 600;
   color: #111827;
 }
 
-/* Odstępy dla kolejnych nagłówków */
-.addTypNyumberAmount h3:not(:first-child),
-.addSerialnumber h3:not(:first-child) {
+.addTypNyumberAmount h3:not(:first-child) {
   margin-top: 12px;
-}
-.addSerialnumber button {
-  margin-top: 10%;
 }
 
 /* Wspólne style dla pól tekstowych i textarea (.note) */
@@ -103,6 +92,39 @@
   height: 150px;
   resize: vertical;
   padding: 12px;
+}
+
+/* Przycisk */
+.addAdres button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px 18px;
+
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1));
+  color: #f9f9f9;
+
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.addAdres button:hover {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6));
+  border-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.addAdres button:active {
+  background: linear-gradient(180deg, #10b935, #0f9605);
+  border-color: #047857;
+  color: #ffffff;
 }
 
 .background_logo {

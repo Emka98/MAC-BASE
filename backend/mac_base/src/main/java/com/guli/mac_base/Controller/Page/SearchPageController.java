@@ -1,19 +1,18 @@
-package com.guli.mac_base.Controller;
+package com.guli.mac_base.Controller.Page;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Controller
 @RequestMapping("/wyszukaj")
-public class wyszukajPageController {
+public class SearchPageController {
 
 
     @GetMapping()
     public String wyszukaj(){
-        return "wyszukaj";
+        return "SearchMac";
     }
 
     @PostMapping("/findDevice")
@@ -24,7 +23,7 @@ public class wyszukajPageController {
                              @RequestParam (required = false) LocalDateTime dateCreated,
                              @RequestParam (required = false) Integer amountOfAddress){
 
-        return "wyszukaj";
+        return "SearchMac";
     }
 
 }

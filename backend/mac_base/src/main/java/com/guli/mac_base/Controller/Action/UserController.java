@@ -1,4 +1,4 @@
-package com.guli.mac_base.Controller;
+package com.guli.mac_base.Controller.Action;
 
 import com.guli.mac_base.Dto.UserDto;
 import com.guli.mac_base.Model.User;

@@ -3,23 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/nadaj_seryjnie.css" />
+    <link rel="stylesheet" href="../static/css/RemoveMac.css" />
     <title>MAC DATABASE</title>
   </head>
   <body>
     <header>
       <img src="../static/img/logo.svg" alt="logo" class="logo" />
+
       <div class="options">
         <div class="option">
           <span>Nadaj</span>
           <div class="dropdown-menu">
-            <a href="nadaj_seryjnie.html">Nadaj seryjnie</a>
+            <a href="AddMacOneTime.html">Nadaj seryjnie</a>
             <a href="../static/nadanie_jednostkowe.html">Nadaj jednostkowo</a>
           </div>
         </div>
 
         <div class="option">
-          <a href="zwolnij.html">Zwolnij</a>
+          <a href="RemoveMac.html">Zwolnij</a>
         </div>
 
         <div class="option">
@@ -31,28 +32,22 @@
       </div>
     </header>
     <article>
+
         <div class="addAdres">
           <div class="addTypNyumberAmount">
-            <h3>Typ urzadzenia:</h3>
-            <input type="text" placeholder="Typ urządzenia np. GM-12">
             <h3>Numer urzadzenia:</h3>
             <input type="text" placeholder="Numer SN z tabliczki">
-            <h3>Ilosc adresow:</h3>
+            <h3>Mac adres:</h3>
             <input type="text" placeholder="Tu wpisz ilość niezbędnych mac-adresów">
+            <button>Zwolnij</button>
           </div>
           <div class="notediv">
             <h3>Notatka:</h3>
             <input type="text" placeholder="Notatka" class="note">
           </div>
-          <div class="addSerialnumber">
-            <h3>Numer poczatkowy:</h3>
-            <input type="text" placeholder="Pierwszy numer z serji">
-            <h3>Ilosc urzadzen:</h3>
-            <input type="text" placeholder="Ilość w serji">
-          <button>Przydziel</button>
           </div>
         </div>
-      <h2>Ostatnio nadane:</h2>
+      <h2>Ostatnio wycofane:</h2>
         <table>
           <tr>
             <th>Lp.</th>
@@ -261,8 +256,7 @@
           </tbody>
           </tr>
         </table>
-
-      <img class="background_logo" src="../static/img/logo.svg" alt="background G-CODE logo" />
+       <img class="background_logo" src="../static/img/logo.svg" alt="background G-CODE logo" />
     </article>
     <footer>
       <p>&copy; 2026 MAC DATABASE by Emil Guliński. All rights reserved.</p>
