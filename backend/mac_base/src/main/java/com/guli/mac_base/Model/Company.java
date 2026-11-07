@@ -6,23 +6,24 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Table(name = "companys")
 public class Company {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String nameCompany;
+    private String name;
     private Set<Long> macBlocks = new HashSet<Long>();
 
     public Company() {
     }
 
-    public String getNameCompany() {
-        return nameCompany;
+    public String getName() {
+        return name;
     }
 
-    public void setNameCompany(String nameCompany) {
-        this.nameCompany = nameCompany;
+    public void setName(String nameCompany) {
+        this.name = nameCompany;
     }
 
     public Set<Long> getMacBlocks() {

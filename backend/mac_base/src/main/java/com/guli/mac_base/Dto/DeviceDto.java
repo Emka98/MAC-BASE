@@ -1,5 +1,6 @@
 package com.guli.mac_base.Dto;
 
+import com.guli.mac_base.Model.Device;
 import com.guli.mac_base.Model.MacAdress;
 import com.guli.mac_base.Model.TypeDevice;
 
@@ -7,11 +8,17 @@ import java.util.Set;
 
 public class DeviceDto {
 
-    private int serialNumber;
+    private Integer serialNumber;
     private TypeDevice typeDevice;
     private Set<MacAdress> macAdresses;
 
     public DeviceDto() {
+    }
+
+    public DeviceDto(Device device) {
+        this.serialNumber = device.getSerialNumber();
+        this.macAdresses = device.getMacAdressSet();
+        this.typeDevice = device.getTyp();
     }
 
     public TypeDevice getTypeDevice() {

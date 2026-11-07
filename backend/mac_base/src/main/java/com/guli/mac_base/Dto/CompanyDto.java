@@ -5,18 +5,18 @@ import java.util.Set;
 
 public class CompanyDto {
 
-    private String companyName;
+    private String company;
     private Set<Long> macBlocks = new HashSet<Long>();
 
     public CompanyDto() {
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public String getCompany() {
+        return company;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setCompany(String company) {
+        this.company = company;
     }
 
     public Set<Long> getMacBlocks() {

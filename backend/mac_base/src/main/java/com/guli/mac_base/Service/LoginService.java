@@ -5,9 +5,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class LoginService {
 
-    public LoginService() {
+    private DeviceServices deviceServices;
+
+    public LoginService(DeviceServices deviceServices) {
+        this.deviceServices = deviceServices;
+    }
+    public void AddTypeLogin() {
+
     }
 
-    public void loginIn(String username, String password) {
+    public void DeleteLogin() {
+
     }
 }

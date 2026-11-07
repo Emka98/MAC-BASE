@@ -9,22 +9,5 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/login")
 public class LoginPageController {
 
-    @Autowired
-    private LoginService loginService;
 
-    public LoginPageController(LoginService loginService) {
-        this.loginService = loginService;
-    }
-
-    @GetMapping()
-    public String loginPage(){
-
-        return "Login";
-    }
-
-    @PostMapping("/loginIn")
-    public String loginIn(@RequestParam String username,@RequestParam String password){
-    loginService.loginIn(username,password);
-        return "Login";
-    }
 }

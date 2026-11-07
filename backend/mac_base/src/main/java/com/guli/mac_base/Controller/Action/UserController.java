@@ -4,10 +4,11 @@ import com.guli.mac_base.Dto.UserDto;
 import com.guli.mac_base.Model.User;
 import com.guli.mac_base.Service.UserServices;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
-@RequestMapping("/Users")
+@RequestMapping("/user")
 public class UserController {
 
     private final UserServices userServices;
@@ -17,29 +18,19 @@ public class UserController {
         this.userServices = userServices;
     }
 
-    @PostMapping("/AddUser")
-    public void addUser(@RequestBody UserDto user) {
+    @PostMapping("/add")
+    public void AddUser(@RequestBody UserDto userDto) {
 
-        userServices.addUser(user);
+        userServices.AddUser(userDto);
     }
 
-    @GetMapping("/FindUser")
-    public List<User> findUser(){
-
-        return userServices.findAllUsers();
+    @PostMapping("/findAll")
+    public List<UserDto> FindAllUser() {
+        return userServices.FindAllUser();
     }
 
-    @PostMapping("/DeleteUser")
-    public void deleteUser(@RequestParam String name) {
+    @PostMapping("/delete")
+    public void DeleteUser(@RequestParam String name) {
 
-        userServices.deleteUser(name);
     }
-
-    @PostMapping("/EditUser")
-    public void editUser(@RequestParam (required = false) String name,
-                         @RequestParam (required = false) String password,
-                         @RequestBody UserDto userdto){
-        userServices.editUser(name, password, userdto);
-    }
-    
 }

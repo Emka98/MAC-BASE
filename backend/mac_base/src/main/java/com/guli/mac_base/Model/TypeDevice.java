@@ -2,19 +2,20 @@ package com.guli.mac_base.Model;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
+@Table(name = "typedevices")
 public class TypeDevice {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Integer id;
-
     private String name;
     private String desinerName;
-
-    @OneToOne
-    private Company company;
+    @OneToMany
+    private Set<Company> companys;
 
     public TypeDevice() {
     }
@@ -43,11 +44,11 @@ public class TypeDevice {
         this.desinerName = desinerName;
     }
 
-    public Company getCompany() {
-        return company;
+    public Set<Company> getCompanys() {
+        return companys;
     }
 
-    public void setCompany(Company company) {
-        this.company = company;
+    public void setCompanys(Set<Company> companys) {
+        this.companys = companys;
     }
 }

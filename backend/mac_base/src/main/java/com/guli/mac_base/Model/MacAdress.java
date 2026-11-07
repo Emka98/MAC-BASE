@@ -3,6 +3,7 @@ package com.guli.mac_base.Model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "macadress")
 public class MacAdress {
 
     @Id

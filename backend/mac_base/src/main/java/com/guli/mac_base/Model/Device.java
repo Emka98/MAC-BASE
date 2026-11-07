@@ -1,23 +1,30 @@
 package com.guli.mac_base.Model;
 
+import com.guli.mac_base.Dto.DeviceDto;
 import jakarta.persistence.*;
 import java.util.Set;
 
 @Entity
+@Table(name = "devices")
 public class Device {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     @Column(unique = true)
-    private int serialNumber;
+    private Integer serialNumber;
     @OneToOne
     private TypeDevice typ;
     @OneToMany
     private Set<MacAdress> macAdressSet;
 
     public Device() {
+    }
+
+    public Device(DeviceDto deviceDto) {
+        this.serialNumber = deviceDto.getSerialNumber();
+        this.macAdressSet = deviceDto.getMacAdresses();
+        this.typ = deviceDto.getTypeDevice();
     }
 
     public Integer getId() {
