@@ -1,4 +1,4 @@
-package com.guli.mac_base.Controller.Page;
-
-public class AddMacOneTimePageController {
-}
+//package com.guli.mac_base.Controller.Page;
+//
+//public class AddMacOneTimePageController {
+//}

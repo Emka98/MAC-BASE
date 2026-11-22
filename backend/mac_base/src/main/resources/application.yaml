@@ -3,4 +3,5 @@ spring:
     name: MAC_BASE
   profiles:
     active:
-      - dev
+#      - dev
+      - pro

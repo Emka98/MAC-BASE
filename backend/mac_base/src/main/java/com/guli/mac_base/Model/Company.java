@@ -6,35 +6,20 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "companys")
+@Table(name = "companies")
 public class Company {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer companyId;
+
+    @Column(length = 200, nullable = false)
     private String name;
-    private Set<Long> macBlocks = new HashSet<Long>();
 
-    public Company() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String nameCompany) {
-        this.name = nameCompany;
-    }
-
-    public Set<Long> getMacBlocks() {
-        return macBlocks;
-    }
-
-    public void setMacBlocks(Set<Long> macBlocks) {
-        this.macBlocks = macBlocks;
-    }
-
-    public void addBlockToSet(long macBlock){
-        this.macBlocks.add(macBlock);
-    }
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(
+            name = "companies_oui",
+            joinColumns = @JoinColumn("company_id")
+    )
+    private Set<Integer> companies_oui = new HashSet<Integer>();
 }

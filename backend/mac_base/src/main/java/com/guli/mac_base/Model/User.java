@@ -9,8 +9,10 @@ public class User{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer userId;
+    @Column(nullable = false, unique = true, length = 32)
     private String name;
+    @Column(nullable = false, length = 64)
     private String password;
     @Enumerated(EnumType.STRING)
     private Role role;
@@ -25,11 +27,11 @@ public class User{
     }
 
     public Integer getId() {
-        return id;
+        return userId;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.userId = id;
     }
 
     public String getName() {
