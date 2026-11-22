@@ -2,9 +2,6 @@ package com.guli.mac_base.Model;
 
 import jakarta.persistence.*;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Entity
 @Table(name = "companies")
 public class Company {
@@ -16,10 +13,22 @@ public class Company {
     @Column(length = 200, nullable = false)
     private String name;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(
-            name = "companies_oui",
-            joinColumns = @JoinColumn("company_id")
-    )
-    private Set<Integer> companies_oui = new HashSet<Integer>();
+    public Company() {
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
