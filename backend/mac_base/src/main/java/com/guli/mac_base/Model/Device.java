@@ -1,11 +1,8 @@
 package com.guli.mac_base.Model;
-
-import com.guli.mac_base.Dto.DeviceDto;
 import jakarta.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table("devices")
 public class Device {
 
     @Id
@@ -14,18 +11,9 @@ public class Device {
     @Column(unique = true)
     private Integer serialNumber;
     @OneToOne
-    @JoinColumn(name = "type_device_id")
-    private TypeDevice typDevice;
-    @OneToMany
-    private Set<MacAdress> macAdressSet;
+    private DeviceType typDevice;
 
     public Device() {
-    }
-
-    public Device(DeviceDto deviceDto) {
-        this.serialNumber = deviceDto.getSerialNumber();
-        this.macAdressSet = deviceDto.getMacAdresses();
-        this.typDevice = deviceDto.getTypeDevice();
     }
 
     public Integer getId() {
@@ -36,27 +24,19 @@ public class Device {
         this.id = id;
     }
 
-    public int getSerialNumber() {
+    public Integer getSerialNumber() {
         return serialNumber;
     }
 
-    public void setSerialNumber(int serialNumber) {
+    public void setSerialNumber(Integer serialNumber) {
         this.serialNumber = serialNumber;
     }
 
-    public TypeDevice getTypDevice() {
+    public DeviceType getTypDevice() {
         return typDevice;
     }
 
-    public void setTypDevice(TypeDevice typ) {
-        this.typDevice = typ;
-    }
-
-    public Set<MacAdress> getMacAdressSet() {
-        return macAdressSet;
-    }
-
-    public void setMacAdressSet(Set<MacAdress> macAdressSet) {
-        this.macAdressSet = macAdressSet;
+    public void setTypDevice(DeviceType typDevice) {
+        this.typDevice = typDevice;
     }
 }

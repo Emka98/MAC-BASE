@@ -1,6 +1,5 @@
 package com.guli.mac_base.Model;
 
-import com.guli.mac_base.Dto.UserDto;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,15 +14,10 @@ public class User{
     @Column(nullable = false, length = 64)
     private String password;
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 32)
     private Role role;
 
     public User() {
-    }
-
-    public User(UserDto userDto) {
-        this.name = userDto.getName();
-        this.password = userDto.getPassword();
-        this.role = userDto.getRole();
     }
 
     public Integer getId() {
