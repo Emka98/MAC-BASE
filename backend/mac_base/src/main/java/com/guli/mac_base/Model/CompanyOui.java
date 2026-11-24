@@ -1,46 +1,31 @@
-//package com.guli.mac_base.Model;
-//
-//import jakarta.persistence.*;
-//import org.hibernate.annotations.ColumnTransformer;
-//
-//@Entity
-//public class CompanyOui {
-//
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Integer companyOuiId;
-//
-//    @Column(name = "oui", nullable = false, unique = true, columnDefinition = "macaddr")
-//    @ColumnTransformer(read = "oui::text", write = "?::macaddr")
-//    private String oui;
-//
-//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//    private Company company;
-//
-//    public CompanyOui() {
-//    }
-//
-//    public Integer getCompaniesOuiId() {
-//        return companyOuiId;
-//    }
-//
-//    public void setCompaniesOuiId(Integer companiesOuiId) {
-//        this.companyOuiId = companiesOuiId;
-//    }
-//
-//    public String getOui() {
-//        return oui;
-//    }
-//
-//    public void setOui(String oui) {
-//        this.oui = oui;
-//    }
-//
-//    public Company getCompany() {
-//        return company;
-//    }
-//
-//    public void setCompany(Company company) {
-//        this.company = company;
-//    }
-//}
+package com.guli.mac_base.Model;
+
+import jakarta.persistence.*;
+
+@Entity
+public class CompanyOui {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer companyOuiId;
+    private Integer companyId;
+
+    public CompanyOui() {
+    }
+
+    public Integer getCompanyOuiId() {
+        return companyOuiId;
+    }
+
+    public void setCompanyOuiId(Integer companyOuiId) {
+        this.companyOuiId = companyOuiId;
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
+    }
+}

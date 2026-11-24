@@ -1,40 +1,20 @@
 package com.guli.mac_base.Model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnTransformer;
 
 @Entity
 public class MacAddress {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Integer macAddressId;
+    @Column(nullable = false, unique = true, columnDefinition = "macaddr")
+    @ColumnTransformer(write = "?::macaddr")
+    private String macAddress;
     private boolean returned;
-    private Long macAddress;
+    private Integer deviceId;
 
-    public MacAddress() {
-    }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public boolean isReturned() {
-        return returned;
-    }
-
-    public void setReturned(boolean returned) {
-        this.returned = returned;
-    }
-
-    public Long getMacAddress() {
-        return macAddress;
-    }
-
-    public void setMacAddress(Long macAddress) {
-        this.macAddress = macAddress;
-    }
 }

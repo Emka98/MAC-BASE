@@ -1,27 +1,26 @@
 package com.guli.mac_base.Model;
 import jakarta.persistence.*;
-import java.util.Set;
 
 @Entity
 public class Device {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer deviceId;
+
     @Column(unique = true)
     private Integer serialNumber;
-    @OneToOne
-    private DeviceType typDevice;
+    private Integer deviceTypId;
 
     public Device() {
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getDeviceId() {
+        return deviceId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setDeviceId(Integer deviceId) {
+        this.deviceId = deviceId;
     }
 
     public Integer getSerialNumber() {
@@ -32,11 +31,11 @@ public class Device {
         this.serialNumber = serialNumber;
     }
 
-    public DeviceType getTypDevice() {
-        return typDevice;
+    public Integer getDeviceTypId() {
+        return deviceTypId;
     }
 
-    public void setTypDevice(DeviceType typDevice) {
-        this.typDevice = typDevice;
+    public void setDeviceTypId(Integer typDeviceId) {
+        this.deviceTypId = typDeviceId;
     }
 }
