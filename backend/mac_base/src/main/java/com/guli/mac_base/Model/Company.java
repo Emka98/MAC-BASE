@@ -8,7 +8,6 @@ public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer companyId;
-
     @Column(length = 200, nullable = false)
     private String name;
 

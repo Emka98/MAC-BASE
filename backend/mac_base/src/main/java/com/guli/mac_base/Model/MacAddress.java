@@ -15,6 +15,38 @@ public class MacAddress {
     private boolean returned;
     private Integer deviceId;
 
+    public MacAddress() {
+    }
 
+    public String getMacAddress() {
+        return macAddress;
+    }
 
+    public void setMacAddress(String macAddress) {
+        this.macAddress = macAddress;
+    }
+
+    public Integer getMacAddressId() {
+        return macAddressId;
+    }
+
+    public void setMacAddressId(Integer macAddressId) {
+        this.macAddressId = macAddressId;
+    }
+
+    public boolean isReturned() {
+        return returned;
+    }
+
+    public void setReturned(boolean returned) {
+        this.returned = returned;
+    }
+
+    public Integer getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(Integer deviceId) {
+        this.deviceId = deviceId;
+    }
 }

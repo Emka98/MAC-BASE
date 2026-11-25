@@ -7,7 +7,6 @@ public class Device {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer deviceId;
-
     @Column(unique = true)
     private Integer serialNumber;
     private Integer deviceTypId;

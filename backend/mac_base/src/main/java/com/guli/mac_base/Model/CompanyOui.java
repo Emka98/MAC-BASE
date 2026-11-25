@@ -8,9 +8,19 @@ public class CompanyOui {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer companyOuiId;
+    @Column(columnDefinition = "macaddr")
+    private String oui;
     private Integer companyId;
 
     public CompanyOui() {
+    }
+
+    public String getOui() {
+        return oui;
+    }
+
+    public void setOui(String oui) {
+        this.oui = oui;
     }
 
     public Integer getCompanyOuiId() {

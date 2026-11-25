@@ -4,13 +4,12 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.FetchType;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
-public class DeviceTyp {
+public class DeviceType {
+
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Integer device_typ_id;
@@ -19,7 +18,7 @@ public class DeviceTyp {
     private String description;
     private Integer companyId;
 
-    public DeviceTyp() {
+    public DeviceType() {
     }
 
     public Integer getDevice_typ_id() {
