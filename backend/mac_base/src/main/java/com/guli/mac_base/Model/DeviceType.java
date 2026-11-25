@@ -12,7 +12,7 @@ public class DeviceType {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    private Integer device_typ_id;
+    private Integer device_type_id;
     @Column(length = 64, nullable = false, unique = true)
     private String name;
     private String description;
@@ -22,11 +22,11 @@ public class DeviceType {
     }
 
     public Integer getDevice_typ_id() {
-        return device_typ_id;
+        return device_type_id;
     }
 
     public void setDevice_typ_id(Integer device_typ_id) {
-        this.device_typ_id = device_typ_id;
+        this.device_type_id = device_typ_id;
     }
 
     public String getName() {
