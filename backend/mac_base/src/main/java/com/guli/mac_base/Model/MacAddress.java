@@ -13,17 +13,11 @@ public class MacAddress {
     @ColumnTransformer(write = "?::macaddr")
     private String macAddress;
     private boolean returned;
-    private Integer deviceId;
+    @ManyToOne()
+    @JoinColumn(name = "device")
+    private Device device;
 
     public MacAddress() {
-    }
-
-    public String getMacAddress() {
-        return macAddress;
-    }
-
-    public void setMacAddress(String macAddress) {
-        this.macAddress = macAddress;
     }
 
     public Integer getMacAddressId() {
@@ -34,6 +28,14 @@ public class MacAddress {
         this.macAddressId = macAddressId;
     }
 
+    public String getMacAddress() {
+        return macAddress;
+    }
+
+    public void setMacAddress(String macAddress) {
+        this.macAddress = macAddress;
+    }
+
     public boolean isReturned() {
         return returned;
     }
@@ -42,11 +44,11 @@ public class MacAddress {
         this.returned = returned;
     }
 
-    public Integer getDeviceId() {
-        return deviceId;
+    public Device getDevice() {
+        return device;
     }
 
-    public void setDeviceId(Integer deviceId) {
-        this.deviceId = deviceId;
+    public void setDevice(Device device) {
+        this.device = device;
     }
 }

@@ -1,43 +1,43 @@
-package com.guli.mac_base.Dto;
-
-import com.guli.mac_base.Model.DeviceType;
-
-public class DeviceTypeDto {
-
-    private String name;
-    private String desinerName;
-    private Integer companyId;
-
-    public DeviceTypeDto() {
-    }
-
-    public DeviceTypeDto(DeviceType deviceType) {
-        this.name = deviceType.getName();
-        this.companyId = companyId;
-        this.desinerName = desinerName;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDesinerName() {
-        return desinerName;
-    }
-
-    public void setDesinerName(String desinerName) {
-        this.desinerName = desinerName;
-    }
-
-    public Integer getCompanyId() {
-        return companyId;
-    }
-
-    public void setCompanyId(Integer companyId) {
-        this.companyId = companyId;
-    }
-}
+//package com.guli.mac_base.Dto;
+//
+//import com.guli.mac_base.Model.Company;
+//
+//import java.util.List;
+//
+//public class DeviceTypeDto {
+//
+//    private String name;
+//    private String description;
+//    private List<Company> producers;
+//
+//    public DeviceTypeDto() {
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public String getDescription() {
+//        return description;
+//    }
+//
+//    public void setDescription(String description) {
+//        this.description = description;
+//    }
+//
+//    public List<Company> getProducers() {
+//        return producers;
+//    }
+//
+//    public void setProducers(List<Company> producers) {
+//        this.producers = producers;
+//    }
+//
+//    public void addCompanyToList(Company company){
+//        this.producers.add(company);
+//    }
+//}

@@ -1,9 +1,9 @@
 package com.guli.mac_base.Model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
@@ -12,21 +12,27 @@ public class DeviceType {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    private Integer device_type_id;
+    private Integer deviceTypeId;
     @Column(length = 64, nullable = false, unique = true)
     private String name;
     private String description;
-    private Integer companyId;
+    @ManyToMany()
+    @JoinTable(
+            name = "device_type_producers",
+            joinColumns = @JoinColumn(name = "device_type_id"),
+            inverseJoinColumns = @JoinColumn(name = "company_id")
+    )
+    private Set<Company> producers = new HashSet<Company>();
 
     public DeviceType() {
     }
 
-    public Integer getDevice_typ_id() {
-        return device_type_id;
+    public Integer getDeviceTypeId() {
+        return deviceTypeId;
     }
 
-    public void setDevice_typ_id(Integer device_typ_id) {
-        this.device_type_id = device_typ_id;
+    public void setDeviceTypeId(Integer deviceTypeId) {
+        this.deviceTypeId = deviceTypeId;
     }
 
     public String getName() {
@@ -45,11 +51,15 @@ public class DeviceType {
         this.description = description;
     }
 
-    public Integer getCompanyId() {
-        return companyId;
+    public Set<Company> getProducers() {
+        return producers;
     }
 
-    public void setCompanyId(Integer companyId) {
-        this.companyId = companyId;
+    public void setProducers(Set<Company> producers) {
+        this.producers = producers;
+    }
+
+    public void addToProducers(Company company){
+        this.producers.add(company);
     }
 }

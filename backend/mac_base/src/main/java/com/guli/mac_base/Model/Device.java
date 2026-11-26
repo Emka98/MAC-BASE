@@ -9,7 +9,9 @@ public class Device {
     private Integer deviceId;
     @Column(unique = true)
     private Integer serialNumber;
-    private Integer deviceTypId;
+    @OneToOne()
+    @JoinColumn(name = "device_type_id")
+    private DeviceType deviceType;
 
     public Device() {
     }
@@ -30,11 +32,11 @@ public class Device {
         this.serialNumber = serialNumber;
     }
 
-    public Integer getDeviceTypId() {
-        return deviceTypId;
+    public DeviceType getDeviceType() {
+        return deviceType;
     }
 
-    public void setDeviceTypId(Integer typDeviceId) {
-        this.deviceTypId = typDeviceId;
+    public void setDeviceType(DeviceType deviceType) {
+        this.deviceType = deviceType;
     }
 }
