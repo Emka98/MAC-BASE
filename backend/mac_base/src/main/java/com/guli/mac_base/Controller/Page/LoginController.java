@@ -24,10 +24,10 @@ public class LoginController {
     @PostMapping("/login")
     public String LoginController(@RequestParam("username") String username, @RequestParam("password") String password) {
         if (userService.login(username, password)) {
-            return "Jesteś zalogowany";
+            return "Jesteś zalogowany " + username + " " + password;
         }
         else {
-            return "Chuj Ci w dupe";
+            return "/login";
         }
     }
 }
